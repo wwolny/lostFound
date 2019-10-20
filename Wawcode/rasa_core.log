@@ -1,0 +1,651 @@
+2019-10-13 13:19:22,529 [ERROR]  Unable to start server
+Traceback (most recent call last):
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\server.py", line 745, in serve
+    http_server = loop.run_until_complete(server_coroutine)
+  File "c:\users\wojtek\anaconda3\lib\asyncio\base_events.py", line 573, in run_until_complete
+    return future.result()
+  File "c:\users\wojtek\anaconda3\lib\asyncio\base_events.py", line 1367, in create_server
+    % (sa, err.strerror.lower())) from None
+OSError: [Errno 10048] error while attempting to bind on address ('0.0.0.0', 5005): only one usage of each socket address (protocol/network address/port) is normally permitted
+2019-10-13 13:19:54,421 [ERROR]  Unable to start server
+Traceback (most recent call last):
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\server.py", line 745, in serve
+    http_server = loop.run_until_complete(server_coroutine)
+  File "c:\users\wojtek\anaconda3\lib\asyncio\base_events.py", line 573, in run_until_complete
+    return future.result()
+  File "c:\users\wojtek\anaconda3\lib\asyncio\base_events.py", line 1367, in create_server
+    % (sa, err.strerror.lower())) from None
+OSError: [Errno 10048] error while attempting to bind on address ('0.0.0.0', 5005): only one usage of each socket address (protocol/network address/port) is normally permitted
+2019-10-13 13:27:52,208 [ERROR]  Unable to start server
+Traceback (most recent call last):
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\server.py", line 745, in serve
+    http_server = loop.run_until_complete(server_coroutine)
+  File "c:\users\wojtek\anaconda3\lib\asyncio\base_events.py", line 573, in run_until_complete
+    return future.result()
+  File "c:\users\wojtek\anaconda3\lib\asyncio\base_events.py", line 1367, in create_server
+    % (sa, err.strerror.lower())) from None
+OSError: [Errno 10048] error while attempting to bind on address ('0.0.0.0', 5005): only one usage of each socket address (protocol/network address/port) is normally permitted
+2019-10-13 14:43:45,481 [ERROR]  Exception occurred while handling uri: 'http://localhost:5005/webhooks/rest/webhook'
+Traceback (most recent call last):
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\request.py", line 149, in load_json
+    self.parsed_json = loads(self.body)
+  File "c:\users\wojtek\anaconda3\lib\json\__init__.py", line 348, in loads
+    return _default_decoder.decode(s)
+  File "c:\users\wojtek\anaconda3\lib\json\decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "c:\users\wojtek\anaconda3\lib\json\decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\app.py", line 917, in handle_request
+    response = await response
+  File "c:\users\wojtek\anaconda3\lib\site-packages\rasa\core\channels\channel.py", line 443, in receive
+    sender_id = await self._extract_sender(request)
+  File "c:\users\wojtek\anaconda3\lib\site-packages\rasa\core\channels\channel.py", line 403, in _extract_sender
+    return req.json.get("sender", None)
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\request.py", line 143, in json
+    self.load_json()
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\request.py", line 153, in load_json
+    raise InvalidUsage("Failed when parsing body as json")
+sanic.exceptions.InvalidUsage: Failed when parsing body as json
+2019-10-13 14:44:34,342 [ERROR]  Exception occurred while handling uri: 'http://localhost:5005/webhooks/rest/webhook'
+Traceback (most recent call last):
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\request.py", line 149, in load_json
+    self.parsed_json = loads(self.body)
+  File "c:\users\wojtek\anaconda3\lib\json\__init__.py", line 348, in loads
+    return _default_decoder.decode(s)
+  File "c:\users\wojtek\anaconda3\lib\json\decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "c:\users\wojtek\anaconda3\lib\json\decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\app.py", line 917, in handle_request
+    response = await response
+  File "c:\users\wojtek\anaconda3\lib\site-packages\rasa\core\channels\channel.py", line 443, in receive
+    sender_id = await self._extract_sender(request)
+  File "c:\users\wojtek\anaconda3\lib\site-packages\rasa\core\channels\channel.py", line 403, in _extract_sender
+    return req.json.get("sender", None)
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\request.py", line 143, in json
+    self.load_json()
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\request.py", line 153, in load_json
+    raise InvalidUsage("Failed when parsing body as json")
+sanic.exceptions.InvalidUsage: Failed when parsing body as json
+2019-10-13 14:49:17,562 [DEBUG]  Available web server routes: 
+/conversations/<conversation_id>/messages          POST                           add_message
+/conversations/<conversation_id>/tracker/events    POST                           append_events
+/webhooks/rest                                     GET                            custom_webhook_RestInput.health
+/webhooks/rest/webhook                             POST                           custom_webhook_RestInput.receive
+/model/test/intents                                POST                           evaluate_intents
+/model/test/stories                                POST                           evaluate_stories
+/conversations/<conversation_id>/execute           POST                           execute_action
+/domain                                            GET                            get_domain
+/                                                  GET                            hello
+/model                                             PUT                            load_model
+/model/parse                                       POST                           parse
+/conversations/<conversation_id>/predict           POST                           predict
+/conversations/<conversation_id>/tracker/events    PUT                            replace_events
+/conversations/<conversation_id>/story             GET                            retrieve_story
+/conversations/<conversation_id>/tracker           GET                            retrieve_tracker
+/status                                            GET                            status
+/model/predict                                     POST                           tracker_predict
+/model/train                                       POST                           train
+/model                                             DELETE                         unload_model
+/version                                           GET                            version
+2019-10-13 14:50:00,123 [ERROR]  Exception occurred while handling uri: 'http://localhost:5005/favicon.ico'
+Traceback (most recent call last):
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\app.py", line 893, in handle_request
+    handler, args, kwargs, uri = self.router.get(request)
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\router.py", line 407, in get
+    return self._get(request.path, request.method, "")
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\router.py", line 469, in _get
+    raise NotFound("Requested URL {} not found".format(url))
+sanic.exceptions.NotFound: Requested URL /favicon.ico not found
+2019-10-13 14:53:15,514 [DEBUG]  Available web server routes: 
+/conversations/<conversation_id>/messages          POST                           add_message
+/conversations/<conversation_id>/tracker/events    POST                           append_events
+/webhooks/rasa                                     GET                            custom_webhook_RasaChatInput.health
+/webhooks/rasa/webhook                             POST                           custom_webhook_RasaChatInput.receive
+/webhooks/rest                                     GET                            custom_webhook_RestInput.health
+/webhooks/rest/webhook                             POST                           custom_webhook_RestInput.receive
+/model/test/intents                                POST                           evaluate_intents
+/model/test/stories                                POST                           evaluate_stories
+/conversations/<conversation_id>/execute           POST                           execute_action
+/domain                                            GET                            get_domain
+/                                                  GET                            hello
+/model                                             PUT                            load_model
+/model/parse                                       POST                           parse
+/conversations/<conversation_id>/predict           POST                           predict
+/conversations/<conversation_id>/tracker/events    PUT                            replace_events
+/conversations/<conversation_id>/story             GET                            retrieve_story
+/conversations/<conversation_id>/tracker           GET                            retrieve_tracker
+/status                                            GET                            status
+/model/predict                                     POST                           tracker_predict
+/model/train                                       POST                           train
+/model                                             DELETE                         unload_model
+/version                                           GET                            version
+2019-10-13 14:55:23,025 [ERROR]  Exception occurred while handling uri: 'http://localhost:5005/webhooks/rest/webhook'
+Traceback (most recent call last):
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\request.py", line 149, in load_json
+    self.parsed_json = loads(self.body)
+  File "c:\users\wojtek\anaconda3\lib\json\__init__.py", line 348, in loads
+    return _default_decoder.decode(s)
+  File "c:\users\wojtek\anaconda3\lib\json\decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "c:\users\wojtek\anaconda3\lib\json\decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\app.py", line 917, in handle_request
+    response = await response
+  File "c:\users\wojtek\anaconda3\lib\site-packages\rasa\core\channels\channel.py", line 443, in receive
+    sender_id = await self._extract_sender(request)
+  File "c:\users\wojtek\anaconda3\lib\site-packages\rasa\core\channels\channel.py", line 403, in _extract_sender
+    return req.json.get("sender", None)
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\request.py", line 143, in json
+    self.load_json()
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\request.py", line 153, in load_json
+    raise InvalidUsage("Failed when parsing body as json")
+sanic.exceptions.InvalidUsage: Failed when parsing body as json
+2019-10-13 15:36:00,355 [ERROR]  Exception occurred while handling uri: 'http://localhost:5005/socket.io/?EIO=3&transport=polling&t=Mt5LJhY'
+Traceback (most recent call last):
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\app.py", line 893, in handle_request
+    handler, args, kwargs, uri = self.router.get(request)
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\router.py", line 407, in get
+    return self._get(request.path, request.method, "")
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\router.py", line 469, in _get
+    raise NotFound("Requested URL {} not found".format(url))
+sanic.exceptions.NotFound: Requested URL /socket.io/ not found
+2019-10-13 15:36:01,122 [ERROR]  Exception occurred while handling uri: 'http://localhost:5005/socket.io/?EIO=3&transport=polling&t=Mt5LJvZ'
+Traceback (most recent call last):
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\app.py", line 893, in handle_request
+    handler, args, kwargs, uri = self.router.get(request)
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\router.py", line 407, in get
+    return self._get(request.path, request.method, "")
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\router.py", line 469, in _get
+    raise NotFound("Requested URL {} not found".format(url))
+sanic.exceptions.NotFound: Requested URL /socket.io/ not found
+2019-10-13 15:36:02,266 [ERROR]  Exception occurred while handling uri: 'http://localhost:5005/socket.io/?EIO=3&transport=polling&t=Mt5LKBP'
+Traceback (most recent call last):
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\app.py", line 893, in handle_request
+    handler, args, kwargs, uri = self.router.get(request)
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\router.py", line 407, in get
+    return self._get(request.path, request.method, "")
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\router.py", line 469, in _get
+    raise NotFound("Requested URL {} not found".format(url))
+sanic.exceptions.NotFound: Requested URL /socket.io/ not found
+2019-10-13 15:36:03,382 [ERROR]  Exception occurred while handling uri: 'http://localhost:5005/socket.io/?EIO=3&transport=polling&t=Mt5LKSn'
+Traceback (most recent call last):
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\app.py", line 893, in handle_request
+    handler, args, kwargs, uri = self.router.get(request)
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\router.py", line 407, in get
+    return self._get(request.path, request.method, "")
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\router.py", line 469, in _get
+    raise NotFound("Requested URL {} not found".format(url))
+sanic.exceptions.NotFound: Requested URL /socket.io/ not found
+2019-10-13 15:36:05,741 [ERROR]  Exception occurred while handling uri: 'http://localhost:5005/socket.io/?EIO=3&transport=polling&t=Mt5LL1l'
+Traceback (most recent call last):
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\app.py", line 893, in handle_request
+    handler, args, kwargs, uri = self.router.get(request)
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\router.py", line 407, in get
+    return self._get(request.path, request.method, "")
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\router.py", line 469, in _get
+    raise NotFound("Requested URL {} not found".format(url))
+sanic.exceptions.NotFound: Requested URL /socket.io/ not found
+2019-10-13 15:36:10,476 [ERROR]  Exception occurred while handling uri: 'http://localhost:5005/socket.io/?EIO=3&transport=polling&t=Mt5LMBd'
+Traceback (most recent call last):
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\app.py", line 893, in handle_request
+    handler, args, kwargs, uri = self.router.get(request)
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\router.py", line 407, in get
+    return self._get(request.path, request.method, "")
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\router.py", line 469, in _get
+    raise NotFound("Requested URL {} not found".format(url))
+sanic.exceptions.NotFound: Requested URL /socket.io/ not found
+2019-10-13 15:36:15,523 [ERROR]  Exception occurred while handling uri: 'http://localhost:5005/socket.io/?EIO=3&transport=polling&t=Mt5LNQL'
+Traceback (most recent call last):
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\app.py", line 893, in handle_request
+    handler, args, kwargs, uri = self.router.get(request)
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\router.py", line 407, in get
+    return self._get(request.path, request.method, "")
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\router.py", line 469, in _get
+    raise NotFound("Requested URL {} not found".format(url))
+sanic.exceptions.NotFound: Requested URL /socket.io/ not found
+2019-10-13 15:36:20,570 [ERROR]  Exception occurred while handling uri: 'http://localhost:5005/socket.io/?EIO=3&transport=polling&t=Mt5LOfC'
+Traceback (most recent call last):
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\app.py", line 893, in handle_request
+    handler, args, kwargs, uri = self.router.get(request)
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\router.py", line 407, in get
+    return self._get(request.path, request.method, "")
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\router.py", line 469, in _get
+    raise NotFound("Requested URL {} not found".format(url))
+sanic.exceptions.NotFound: Requested URL /socket.io/ not found
+2019-10-13 15:36:25,616 [ERROR]  Exception occurred while handling uri: 'http://localhost:5005/socket.io/?EIO=3&transport=polling&t=Mt5LPtq'
+Traceback (most recent call last):
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\app.py", line 893, in handle_request
+    handler, args, kwargs, uri = self.router.get(request)
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\router.py", line 407, in get
+    return self._get(request.path, request.method, "")
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\router.py", line 469, in _get
+    raise NotFound("Requested URL {} not found".format(url))
+sanic.exceptions.NotFound: Requested URL /socket.io/ not found
+2019-10-13 15:36:30,663 [ERROR]  Exception occurred while handling uri: 'http://localhost:5005/socket.io/?EIO=3&transport=polling&t=Mt5LR6v'
+Traceback (most recent call last):
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\app.py", line 893, in handle_request
+    handler, args, kwargs, uri = self.router.get(request)
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\router.py", line 407, in get
+    return self._get(request.path, request.method, "")
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\router.py", line 469, in _get
+    raise NotFound("Requested URL {} not found".format(url))
+sanic.exceptions.NotFound: Requested URL /socket.io/ not found
+2019-10-13 15:36:37,554 [ERROR]  Exception occurred while handling uri: 'http://localhost:5005/socket.io/?EIO=3&transport=polling&t=Mt5LSoL'
+Traceback (most recent call last):
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\app.py", line 893, in handle_request
+    handler, args, kwargs, uri = self.router.get(request)
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\router.py", line 407, in get
+    return self._get(request.path, request.method, "")
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\router.py", line 469, in _get
+    raise NotFound("Requested URL {} not found".format(url))
+sanic.exceptions.NotFound: Requested URL /socket.io/ not found
+2019-10-13 15:36:42,601 [ERROR]  Exception occurred while handling uri: 'http://localhost:5005/socket.io/?EIO=3&transport=polling&t=Mt5LU1F'
+Traceback (most recent call last):
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\app.py", line 893, in handle_request
+    handler, args, kwargs, uri = self.router.get(request)
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\router.py", line 407, in get
+    return self._get(request.path, request.method, "")
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\router.py", line 469, in _get
+    raise NotFound("Requested URL {} not found".format(url))
+sanic.exceptions.NotFound: Requested URL /socket.io/ not found
+2019-10-13 15:36:48,602 [ERROR]  Exception occurred while handling uri: 'http://localhost:5005/socket.io/?EIO=3&transport=polling&t=Mt5LVUz'
+Traceback (most recent call last):
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\app.py", line 893, in handle_request
+    handler, args, kwargs, uri = self.router.get(request)
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\router.py", line 407, in get
+    return self._get(request.path, request.method, "")
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\router.py", line 469, in _get
+    raise NotFound("Requested URL {} not found".format(url))
+sanic.exceptions.NotFound: Requested URL /socket.io/ not found
+2019-10-13 15:36:54,664 [ERROR]  Exception occurred while handling uri: 'http://localhost:5005/socket.io/?EIO=3&transport=polling&t=Mt5LWzi'
+Traceback (most recent call last):
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\app.py", line 893, in handle_request
+    handler, args, kwargs, uri = self.router.get(request)
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\router.py", line 407, in get
+    return self._get(request.path, request.method, "")
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\router.py", line 469, in _get
+    raise NotFound("Requested URL {} not found".format(url))
+sanic.exceptions.NotFound: Requested URL /socket.io/ not found
+2019-10-13 15:37:00,711 [ERROR]  Exception occurred while handling uri: 'http://localhost:5005/socket.io/?EIO=3&transport=polling&t=Mt5LYSA'
+Traceback (most recent call last):
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\app.py", line 893, in handle_request
+    handler, args, kwargs, uri = self.router.get(request)
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\router.py", line 407, in get
+    return self._get(request.path, request.method, "")
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\router.py", line 469, in _get
+    raise NotFound("Requested URL {} not found".format(url))
+sanic.exceptions.NotFound: Requested URL /socket.io/ not found
+2019-10-13 15:37:06,790 [ERROR]  Exception occurred while handling uri: 'http://localhost:5005/socket.io/?EIO=3&transport=polling&t=Mt5LZxO'
+Traceback (most recent call last):
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\app.py", line 893, in handle_request
+    handler, args, kwargs, uri = self.router.get(request)
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\router.py", line 407, in get
+    return self._get(request.path, request.method, "")
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\router.py", line 469, in _get
+    raise NotFound("Requested URL {} not found".format(url))
+sanic.exceptions.NotFound: Requested URL /socket.io/ not found
+2019-10-13 15:37:12,843 [ERROR]  Exception occurred while handling uri: 'http://localhost:5005/socket.io/?EIO=3&transport=polling&t=Mt5LbPl'
+Traceback (most recent call last):
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\app.py", line 893, in handle_request
+    handler, args, kwargs, uri = self.router.get(request)
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\router.py", line 407, in get
+    return self._get(request.path, request.method, "")
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\router.py", line 469, in _get
+    raise NotFound("Requested URL {} not found".format(url))
+sanic.exceptions.NotFound: Requested URL /socket.io/ not found
+2019-10-13 15:37:19,071 [ERROR]  Exception occurred while handling uri: 'http://localhost:5005/socket.io/?EIO=3&transport=polling&t=Mt5Lcu6'
+Traceback (most recent call last):
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\app.py", line 893, in handle_request
+    handler, args, kwargs, uri = self.router.get(request)
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\router.py", line 407, in get
+    return self._get(request.path, request.method, "")
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\router.py", line 469, in _get
+    raise NotFound("Requested URL {} not found".format(url))
+sanic.exceptions.NotFound: Requested URL /socket.io/ not found
+2019-10-13 15:37:25,145 [ERROR]  Exception occurred while handling uri: 'http://localhost:5005/socket.io/?EIO=3&transport=polling&t=Mt5LePq'
+Traceback (most recent call last):
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\app.py", line 893, in handle_request
+    handler, args, kwargs, uri = self.router.get(request)
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\router.py", line 407, in get
+    return self._get(request.path, request.method, "")
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\router.py", line 469, in _get
+    raise NotFound("Requested URL {} not found".format(url))
+sanic.exceptions.NotFound: Requested URL /socket.io/ not found
+2019-10-13 15:37:31,208 [ERROR]  Exception occurred while handling uri: 'http://localhost:5005/socket.io/?EIO=3&transport=polling&t=Mt5Lfuw'
+Traceback (most recent call last):
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\app.py", line 893, in handle_request
+    handler, args, kwargs, uri = self.router.get(request)
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\router.py", line 407, in get
+    return self._get(request.path, request.method, "")
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\router.py", line 469, in _get
+    raise NotFound("Requested URL {} not found".format(url))
+sanic.exceptions.NotFound: Requested URL /socket.io/ not found
+2019-10-13 15:37:37,225 [ERROR]  Exception occurred while handling uri: 'http://localhost:5005/socket.io/?EIO=3&transport=polling&t=Mt5LhNC'
+Traceback (most recent call last):
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\app.py", line 893, in handle_request
+    handler, args, kwargs, uri = self.router.get(request)
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\router.py", line 407, in get
+    return self._get(request.path, request.method, "")
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\router.py", line 469, in _get
+    raise NotFound("Requested URL {} not found".format(url))
+sanic.exceptions.NotFound: Requested URL /socket.io/ not found
+2019-10-13 15:37:46,804 [ERROR]  Exception occurred while handling uri: 'http://localhost:5005/socket.io/?EIO=3&transport=polling&t=Mt5Ljib'
+Traceback (most recent call last):
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\app.py", line 893, in handle_request
+    handler, args, kwargs, uri = self.router.get(request)
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\router.py", line 407, in get
+    return self._get(request.path, request.method, "")
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\router.py", line 469, in _get
+    raise NotFound("Requested URL {} not found".format(url))
+sanic.exceptions.NotFound: Requested URL /socket.io/ not found
+2019-10-13 15:37:53,788 [ERROR]  Exception occurred while handling uri: 'http://localhost:5005/socket.io/?EIO=3&transport=polling&t=Mt5LlPz'
+Traceback (most recent call last):
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\app.py", line 893, in handle_request
+    handler, args, kwargs, uri = self.router.get(request)
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\router.py", line 407, in get
+    return self._get(request.path, request.method, "")
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\router.py", line 469, in _get
+    raise NotFound("Requested URL {} not found".format(url))
+sanic.exceptions.NotFound: Requested URL /socket.io/ not found
+2019-10-13 15:38:02,757 [ERROR]  Exception occurred while handling uri: 'http://localhost:5005/socket.io/?EIO=3&transport=polling&t=Mt5Lnbt'
+Traceback (most recent call last):
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\app.py", line 893, in handle_request
+    handler, args, kwargs, uri = self.router.get(request)
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\router.py", line 407, in get
+    return self._get(request.path, request.method, "")
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\router.py", line 469, in _get
+    raise NotFound("Requested URL {} not found".format(url))
+sanic.exceptions.NotFound: Requested URL /socket.io/ not found
+2019-10-13 15:38:08,821 [ERROR]  Exception occurred while handling uri: 'http://localhost:5005/socket.io/?EIO=3&transport=polling&t=Mt5Lp4d'
+Traceback (most recent call last):
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\app.py", line 893, in handle_request
+    handler, args, kwargs, uri = self.router.get(request)
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\router.py", line 407, in get
+    return self._get(request.path, request.method, "")
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\router.py", line 469, in _get
+    raise NotFound("Requested URL {} not found".format(url))
+sanic.exceptions.NotFound: Requested URL /socket.io/ not found
+2019-10-13 15:38:30,667 [ERROR]  Exception occurred while handling uri: 'http://localhost:5005/socket.io/?EIO=3&transport=polling&t=Mt5LuP_'
+Traceback (most recent call last):
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\app.py", line 893, in handle_request
+    handler, args, kwargs, uri = self.router.get(request)
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\router.py", line 407, in get
+    return self._get(request.path, request.method, "")
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\router.py", line 469, in _get
+    raise NotFound("Requested URL {} not found".format(url))
+sanic.exceptions.NotFound: Requested URL /socket.io/ not found
+2019-10-13 15:38:37,727 [ERROR]  Exception occurred while handling uri: 'http://localhost:5005/socket.io/?EIO=3&transport=polling&t=Mt5Lw81'
+Traceback (most recent call last):
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\app.py", line 893, in handle_request
+    handler, args, kwargs, uri = self.router.get(request)
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\router.py", line 407, in get
+    return self._get(request.path, request.method, "")
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\router.py", line 469, in _get
+    raise NotFound("Requested URL {} not found".format(url))
+sanic.exceptions.NotFound: Requested URL /socket.io/ not found
+2019-10-13 15:38:43,774 [ERROR]  Exception occurred while handling uri: 'http://localhost:5005/socket.io/?EIO=3&transport=polling&t=Mt5LxcX'
+Traceback (most recent call last):
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\app.py", line 893, in handle_request
+    handler, args, kwargs, uri = self.router.get(request)
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\router.py", line 407, in get
+    return self._get(request.path, request.method, "")
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\router.py", line 469, in _get
+    raise NotFound("Requested URL {} not found".format(url))
+sanic.exceptions.NotFound: Requested URL /socket.io/ not found
+2019-10-13 15:38:49,853 [ERROR]  Exception occurred while handling uri: 'http://localhost:5005/socket.io/?EIO=3&transport=polling&t=Mt5Lz5V'
+Traceback (most recent call last):
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\app.py", line 893, in handle_request
+    handler, args, kwargs, uri = self.router.get(request)
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\router.py", line 407, in get
+    return self._get(request.path, request.method, "")
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\router.py", line 469, in _get
+    raise NotFound("Requested URL {} not found".format(url))
+sanic.exceptions.NotFound: Requested URL /socket.io/ not found
+2019-10-13 15:38:55,962 [ERROR]  Exception occurred while handling uri: 'http://localhost:5005/socket.io/?EIO=3&transport=polling&t=Mt5L-ay'
+Traceback (most recent call last):
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\app.py", line 893, in handle_request
+    handler, args, kwargs, uri = self.router.get(request)
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\router.py", line 407, in get
+    return self._get(request.path, request.method, "")
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\router.py", line 469, in _get
+    raise NotFound("Requested URL {} not found".format(url))
+sanic.exceptions.NotFound: Requested URL /socket.io/ not found
+2019-10-13 15:39:02,023 [ERROR]  Exception occurred while handling uri: 'http://localhost:5005/socket.io/?EIO=3&transport=polling&t=Mt5M03p'
+Traceback (most recent call last):
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\app.py", line 893, in handle_request
+    handler, args, kwargs, uri = self.router.get(request)
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\router.py", line 407, in get
+    return self._get(request.path, request.method, "")
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\router.py", line 469, in _get
+    raise NotFound("Requested URL {} not found".format(url))
+sanic.exceptions.NotFound: Requested URL /socket.io/ not found
+2019-10-13 15:39:08,059 [ERROR]  Exception occurred while handling uri: 'http://localhost:5005/socket.io/?EIO=3&transport=polling&t=Mt5M1YS'
+Traceback (most recent call last):
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\app.py", line 893, in handle_request
+    handler, args, kwargs, uri = self.router.get(request)
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\router.py", line 407, in get
+    return self._get(request.path, request.method, "")
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\router.py", line 469, in _get
+    raise NotFound("Requested URL {} not found".format(url))
+sanic.exceptions.NotFound: Requested URL /socket.io/ not found
+2019-10-13 15:39:14,152 [ERROR]  Exception occurred while handling uri: 'http://localhost:5005/socket.io/?EIO=3&transport=polling&t=Mt5M31Q'
+Traceback (most recent call last):
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\app.py", line 893, in handle_request
+    handler, args, kwargs, uri = self.router.get(request)
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\router.py", line 407, in get
+    return self._get(request.path, request.method, "")
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\router.py", line 469, in _get
+    raise NotFound("Requested URL {} not found".format(url))
+sanic.exceptions.NotFound: Requested URL /socket.io/ not found
+2019-10-13 15:39:20,236 [ERROR]  Exception occurred while handling uri: 'http://localhost:5005/socket.io/?EIO=3&transport=polling&t=Mt5M4WP'
+Traceback (most recent call last):
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\app.py", line 893, in handle_request
+    handler, args, kwargs, uri = self.router.get(request)
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\router.py", line 407, in get
+    return self._get(request.path, request.method, "")
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\router.py", line 469, in _get
+    raise NotFound("Requested URL {} not found".format(url))
+sanic.exceptions.NotFound: Requested URL /socket.io/ not found
+2019-10-13 15:39:26,308 [ERROR]  Exception occurred while handling uri: 'http://localhost:5005/socket.io/?EIO=3&transport=polling&t=Mt5M5_1'
+Traceback (most recent call last):
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\app.py", line 893, in handle_request
+    handler, args, kwargs, uri = self.router.get(request)
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\router.py", line 407, in get
+    return self._get(request.path, request.method, "")
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\router.py", line 469, in _get
+    raise NotFound("Requested URL {} not found".format(url))
+sanic.exceptions.NotFound: Requested URL /socket.io/ not found
+2019-10-13 15:39:32,292 [ERROR]  Exception occurred while handling uri: 'http://localhost:5005/socket.io/?EIO=3&transport=polling&t=Mt5M7Sq'
+Traceback (most recent call last):
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\app.py", line 893, in handle_request
+    handler, args, kwargs, uri = self.router.get(request)
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\router.py", line 407, in get
+    return self._get(request.path, request.method, "")
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\router.py", line 469, in _get
+    raise NotFound("Requested URL {} not found".format(url))
+sanic.exceptions.NotFound: Requested URL /socket.io/ not found
+2019-10-13 15:39:38,325 [ERROR]  Exception occurred while handling uri: 'http://localhost:5005/socket.io/?EIO=3&transport=polling&t=Mt5M8x6'
+Traceback (most recent call last):
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\app.py", line 893, in handle_request
+    handler, args, kwargs, uri = self.router.get(request)
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\router.py", line 407, in get
+    return self._get(request.path, request.method, "")
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\router.py", line 469, in _get
+    raise NotFound("Requested URL {} not found".format(url))
+sanic.exceptions.NotFound: Requested URL /socket.io/ not found
+2019-10-13 15:39:44,372 [ERROR]  Exception occurred while handling uri: 'http://localhost:5005/socket.io/?EIO=3&transport=polling&t=Mt5MAPq'
+Traceback (most recent call last):
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\app.py", line 893, in handle_request
+    handler, args, kwargs, uri = self.router.get(request)
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\router.py", line 407, in get
+    return self._get(request.path, request.method, "")
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\router.py", line 469, in _get
+    raise NotFound("Requested URL {} not found".format(url))
+sanic.exceptions.NotFound: Requested URL /socket.io/ not found
+2019-10-13 15:39:50,419 [ERROR]  Exception occurred while handling uri: 'http://localhost:5005/socket.io/?EIO=3&transport=polling&t=Mt5MBu5'
+Traceback (most recent call last):
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\app.py", line 893, in handle_request
+    handler, args, kwargs, uri = self.router.get(request)
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\router.py", line 407, in get
+    return self._get(request.path, request.method, "")
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\router.py", line 469, in _get
+    raise NotFound("Requested URL {} not found".format(url))
+sanic.exceptions.NotFound: Requested URL /socket.io/ not found
+2019-10-13 15:39:56,497 [ERROR]  Exception occurred while handling uri: 'http://localhost:5005/socket.io/?EIO=3&transport=polling&t=Mt5MDNI'
+Traceback (most recent call last):
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\app.py", line 893, in handle_request
+    handler, args, kwargs, uri = self.router.get(request)
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\router.py", line 407, in get
+    return self._get(request.path, request.method, "")
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\router.py", line 469, in _get
+    raise NotFound("Requested URL {} not found".format(url))
+sanic.exceptions.NotFound: Requested URL /socket.io/ not found
+2019-10-13 15:40:02,575 [ERROR]  Exception occurred while handling uri: 'http://localhost:5005/socket.io/?EIO=3&transport=polling&t=Mt5MEs1'
+Traceback (most recent call last):
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\app.py", line 893, in handle_request
+    handler, args, kwargs, uri = self.router.get(request)
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\router.py", line 407, in get
+    return self._get(request.path, request.method, "")
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\router.py", line 469, in _get
+    raise NotFound("Requested URL {} not found".format(url))
+sanic.exceptions.NotFound: Requested URL /socket.io/ not found
+2019-10-13 15:40:08,622 [ERROR]  Exception occurred while handling uri: 'http://localhost:5005/socket.io/?EIO=3&transport=polling&t=Mt5MGKH'
+Traceback (most recent call last):
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\app.py", line 893, in handle_request
+    handler, args, kwargs, uri = self.router.get(request)
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\router.py", line 407, in get
+    return self._get(request.path, request.method, "")
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\router.py", line 469, in _get
+    raise NotFound("Requested URL {} not found".format(url))
+sanic.exceptions.NotFound: Requested URL /socket.io/ not found
+2019-10-13 15:40:14,716 [ERROR]  Exception occurred while handling uri: 'http://localhost:5005/socket.io/?EIO=3&transport=polling&t=Mt5MHpV'
+Traceback (most recent call last):
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\app.py", line 893, in handle_request
+    handler, args, kwargs, uri = self.router.get(request)
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\router.py", line 407, in get
+    return self._get(request.path, request.method, "")
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\router.py", line 469, in _get
+    raise NotFound("Requested URL {} not found".format(url))
+sanic.exceptions.NotFound: Requested URL /socket.io/ not found
+2019-10-13 15:40:20,747 [ERROR]  Exception occurred while handling uri: 'http://localhost:5005/socket.io/?EIO=3&transport=polling&t=Mt5MJHj'
+Traceback (most recent call last):
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\app.py", line 893, in handle_request
+    handler, args, kwargs, uri = self.router.get(request)
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\router.py", line 407, in get
+    return self._get(request.path, request.method, "")
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\router.py", line 469, in _get
+    raise NotFound("Requested URL {} not found".format(url))
+sanic.exceptions.NotFound: Requested URL /socket.io/ not found
+2019-10-13 15:40:26,857 [ERROR]  Exception occurred while handling uri: 'http://localhost:5005/socket.io/?EIO=3&transport=polling&t=Mt5MKnC'
+Traceback (most recent call last):
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\app.py", line 893, in handle_request
+    handler, args, kwargs, uri = self.router.get(request)
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\router.py", line 407, in get
+    return self._get(request.path, request.method, "")
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\router.py", line 469, in _get
+    raise NotFound("Requested URL {} not found".format(url))
+sanic.exceptions.NotFound: Requested URL /socket.io/ not found
+2019-10-13 15:40:32,873 [ERROR]  Exception occurred while handling uri: 'http://localhost:5005/socket.io/?EIO=3&transport=polling&t=Mt5MMFg'
+Traceback (most recent call last):
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\app.py", line 893, in handle_request
+    handler, args, kwargs, uri = self.router.get(request)
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\router.py", line 407, in get
+    return self._get(request.path, request.method, "")
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\router.py", line 469, in _get
+    raise NotFound("Requested URL {} not found".format(url))
+sanic.exceptions.NotFound: Requested URL /socket.io/ not found
+2019-10-13 15:40:43,499 [ERROR]  Exception occurred while handling uri: 'http://localhost:5005/socket.io/?EIO=3&transport=polling&t=Mt5MNkA'
+Traceback (most recent call last):
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\app.py", line 893, in handle_request
+    handler, args, kwargs, uri = self.router.get(request)
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\router.py", line 407, in get
+    return self._get(request.path, request.method, "")
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\router.py", line 469, in _get
+    raise NotFound("Requested URL {} not found".format(url))
+sanic.exceptions.NotFound: Requested URL /socket.io/ not found
+2019-10-13 15:40:49,543 [ERROR]  Exception occurred while handling uri: 'http://localhost:5005/socket.io/?EIO=3&transport=polling&t=Mt5MQJx'
+Traceback (most recent call last):
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\app.py", line 893, in handle_request
+    handler, args, kwargs, uri = self.router.get(request)
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\router.py", line 407, in get
+    return self._get(request.path, request.method, "")
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\router.py", line 469, in _get
+    raise NotFound("Requested URL {} not found".format(url))
+sanic.exceptions.NotFound: Requested URL /socket.io/ not found
+2019-10-13 15:40:55,616 [ERROR]  Exception occurred while handling uri: 'http://localhost:5005/socket.io/?EIO=3&transport=polling&t=Mt5MRog'
+Traceback (most recent call last):
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\app.py", line 893, in handle_request
+    handler, args, kwargs, uri = self.router.get(request)
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\router.py", line 407, in get
+    return self._get(request.path, request.method, "")
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\router.py", line 469, in _get
+    raise NotFound("Requested URL {} not found".format(url))
+sanic.exceptions.NotFound: Requested URL /socket.io/ not found
+2019-10-13 15:41:01,678 [ERROR]  Exception occurred while handling uri: 'http://localhost:5005/socket.io/?EIO=3&transport=polling&t=Mt5MTHG'
+Traceback (most recent call last):
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\app.py", line 893, in handle_request
+    handler, args, kwargs, uri = self.router.get(request)
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\router.py", line 407, in get
+    return self._get(request.path, request.method, "")
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\router.py", line 469, in _get
+    raise NotFound("Requested URL {} not found".format(url))
+sanic.exceptions.NotFound: Requested URL /socket.io/ not found
+2019-10-13 15:41:07,761 [ERROR]  Exception occurred while handling uri: 'http://localhost:5005/socket.io/?EIO=3&transport=polling&t=Mt5MUmJ'
+Traceback (most recent call last):
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\app.py", line 893, in handle_request
+    handler, args, kwargs, uri = self.router.get(request)
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\router.py", line 407, in get
+    return self._get(request.path, request.method, "")
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\router.py", line 469, in _get
+    raise NotFound("Requested URL {} not found".format(url))
+sanic.exceptions.NotFound: Requested URL /socket.io/ not found
+2019-10-13 15:41:13,882 [ERROR]  Exception occurred while handling uri: 'http://localhost:5005/socket.io/?EIO=3&transport=polling&t=Mt5MWFz'
+Traceback (most recent call last):
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\app.py", line 893, in handle_request
+    handler, args, kwargs, uri = self.router.get(request)
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\router.py", line 407, in get
+    return self._get(request.path, request.method, "")
+  File "c:\users\wojtek\anaconda3\lib\site-packages\sanic\router.py", line 469, in _get
+    raise NotFound("Requested URL {} not found".format(url))
+sanic.exceptions.NotFound: Requested URL /socket.io/ not found
+2019-10-13 15:42:33,728 [DEBUG]  Available web server routes: 
+/conversations/<conversation_id>/messages          POST                           add_message
+/conversations/<conversation_id>/tracker/events    POST                           append_events
+/webhooks/rasa                                     GET                            custom_webhook_RasaChatInput.health
+/webhooks/rasa/webhook                             POST                           custom_webhook_RasaChatInput.receive
+/webhooks/rest                                     GET                            custom_webhook_RestInput.health
+/webhooks/rest/webhook                             POST                           custom_webhook_RestInput.receive
+/model/test/intents                                POST                           evaluate_intents
+/model/test/stories                                POST                           evaluate_stories
+/conversations/<conversation_id>/execute           POST                           execute_action
+/domain                                            GET                            get_domain
+/socket.io                                         OPTIONS                        handle_request
+/                                                  GET                            hello
+/model                                             PUT                            load_model
+/model/parse                                       POST                           parse
+/conversations/<conversation_id>/predict           POST                           predict
+/conversations/<conversation_id>/tracker/events    PUT                            replace_events
+/conversations/<conversation_id>/story             GET                            retrieve_story
+/conversations/<conversation_id>/tracker           GET                            retrieve_tracker
+/webhooks/socketio                                 GET                            socketio_webhook.health
+/status                                            GET                            status
+/model/predict                                     POST                           tracker_predict
+/model/train                                       POST                           train
+/model                                             DELETE                         unload_model
+/version                                           GET                            version

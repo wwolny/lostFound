@@ -1,0 +1,64 @@
+%YAML 1.1
+---
+actions:
+- utter_default
+- utter_goodbye
+- utter_greet
+- utter_iamrobot
+- utter_qdescription
+- utter_qphone
+- utter_qplace
+- utter_qtime
+- utter_accepted
+entities:
+- address
+- day
+- description
+- hour
+- phone
+- thing
+intents:
+- lost_description
+- lost_phone
+- lost_place
+- lost_time
+- lost_info
+- greet
+- affirm
+- goodbye
+- deny
+- q_rurobot
+slots:
+  address:
+    type: text
+  day:
+    type: text
+  description:
+    type: text
+  hour:
+    type: text
+  phone:
+    type: text
+  thing:
+    type: text
+templates:
+  utter_default:
+  - text: Niestety nie zrozumiałem o co Ci chodzi :( Możesz dla mnie powtórzyć?
+  utter_goodbye:
+  - text: Cześć
+  utter_greet:
+  - text: Cześć! Jak się masz?
+  utter_iamrobot:
+  - text: Jestem chatbotem. Mam jeden rok, a moi rodzice to Ramjon Software!
+  utter_qdescription:
+  - text: Podaj szczegółowe informacje, dzięki którym łatwiej będzie nam znaleźć twoją
+      {thing}
+  utter_qphone:
+  - text: Podaj swój numer telefonu, żebyśmy mogli Cię poinformaować gdy znajdziemy
+      twoją {thing}
+  utter_qplace:
+  - text: Gdzie zgubiłeś {thing}?
+  utter_qtime:
+  - text: Kiedy dokładnie zgubiłeś swoją {thing}?
+  utter_accepted:
+  - text: Dziękuję, Twoje zgłoszenie zostało przyjęte!
